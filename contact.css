@@ -1,0 +1,169 @@
+.contact-card {
+  margin: 36px auto 0;
+  max-width: 640px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 28px;
+  border-radius: 12px;
+  text-align: left;
+  color: var(--muted);
+}
+
+.hero-inner .logo {
+  margin-bottom: -96px;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-card h2 {
+  color: var(--white);
+  margin-bottom: 12px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  letter-spacing: 0.06em;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  padding-right: 0.35em;
+  border-right: 3px solid var(--gold);
+}
+
+#page.visible .contact-card h2 {
+  animation: typing 1.8s steps(10, end) forwards,
+    blink-caret 0.75s step-end infinite 1.8s;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 10ch;
+  }
+}
+
+@keyframes blink-caret {
+  0%, 100% {
+    border-color: var(--gold);
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+
+.contact-card p {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.contact-card label {
+  display: block;
+  font-size: 0.75rem;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Space Mono", monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contact-card input,
+.contact-card textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--white);
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+}
+
+.contact-card textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  justify-content: flex-end;
+}
+
+.contact-shortcut {
+  margin: 22px 0 18px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #64b161;
+  color: #07070c;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 7px;
+  padding: 14px 20px;
+}
+
+.whatsapp-link:hover {
+  background: #1ebe5d;
+}
+
+.whatsapp-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+/* Instagram button: same dimensions as WhatsApp, gradient matching Instagram tones */
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(45deg, #f58529 0%, #dd2a7b 30%, #8134af 60%, #515bd4 100%);
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 7px;
+  padding: 14px 20px;
+}
+
+.instagram-link:hover {
+  filter: brightness(0.95);
+}
+
+.instagram-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.back-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  align-self: center;
+  min-width: 120px;
+}
+
+@media (max-width: 767px) {
+  .contact-shortcut {
+    display: grid;
+    gap: 12px;
+  }
+
+  .contact-shortcut .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

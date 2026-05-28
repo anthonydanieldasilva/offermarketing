@@ -1,0 +1,426 @@
+﻿:root {
+  --bg: #07070c;
+  --white: #f0f0f8;
+  --gold: #c8a84b;
+  --muted: rgba(255, 255, 255, 0.45);
+  --text: rgba(255, 255, 255, 0.92);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--white);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 56px 24px 60px;
+}
+
+.OurFormula_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.OurFormula_logo {
+  max-width: 220px;
+  flex-shrink: 0;
+}
+
+.OurFormula_logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.OurFormula_formulaSubHeading {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(1.2rem, 6vw, 0.9rem);
+  line-height: 1.05;
+  max-width: 920px;
+  margin: 0;
+}
+
+.OurFormula_formulaSubHeading b {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.emph-marketing {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.15em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.emph-future {
+  font-family: "Space Mono", monospace;
+  font-size: 1.02em;
+  color: rgba(255, 255, 255, 0.95);
+  
+  color: var(--gold);
+}
+
+.emph-cream {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.1em;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+}
+
+.WhatWeDo_whatWeDoContainer {
+  position: relative;
+}
+
+.WhatWeDo_sectionHeading {
+  position: relative;
+  margin-bottom: 80px;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  padding-left: 120px;
+}
+
+.WhatWeDo_sectionHeading:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 68px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.WhatWeDo_whatWeDoWrapContainer {
+  position: relative;
+  padding-left: 32px;
+}
+
+.WhatWeDo_whatWeDoWrapContainer:before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.WhatWeDo_whatWeDoWrap {
+  position: relative;
+  padding-bottom: 48px;
+  display: grid;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .WhatWeDo_whatWeDoWrap {
+    grid-template-columns: minmax(260px, 1fr) minmax(280px, 380px);
+    gap: 48px;
+    padding-bottom: 60px;
+  }
+}
+
+.WhatWeDo_whatWeDoWrap h5 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.WhatWeDo_whatWeDoWrap h3 {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4.3rem);
+  line-height: 0.95;
+  color: var(--white);
+  position: relative;
+}
+
+.WhatWeDo_whatWeDoWrap h3:before {
+  content: attr(data-count);
+  position: absolute;
+  left: -68px;
+  top: 2px;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.WhatWeDo_whatWeDoWrap p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(1rem, 1.05vw, 1.1rem);
+  line-height: 1.8;
+  max-width: 760px;
+}
+
+.activities-text {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin-top: 16px;
+  padding: 12px 0;
+  cursor: text;
+}
+
+.btn {
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: transform 0.2s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-outline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    rgba(200, 168, 75, 0.16),
+    rgba(255, 255, 255, 0.04),
+    rgba(200, 168, 75, 0.08)
+  );
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+}
+
+.btn-outline::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, transparent, rgba(200, 168, 75, 0.8), transparent);
+  filter: blur(8px);
+  opacity: 0.28;
+  animation: glow-slide 2.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.btn-outline:hover {
+  border-color: rgba(200, 168, 75, 0.75);
+  color: var(--white);
+}
+
+.btn-outline:hover::before {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.btn-outline:hover::after {
+  opacity: 0.6;
+}
+
+@keyframes glow-slide {
+  0%,
+  100% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+.contactoporservicios {
+  margin-top: 64px;
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  padding-bottom: 24px;
+}
+
+.contactoporservicios-copy {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  max-width: 680px;
+  text-align: center;
+  margin: 0;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.footer-logo img {
+  width: 120px;
+  height: auto;
+}
+
+@media (min-width: 992px) {
+  .WhatWeDo_whatWeDoWrap p {
+    max-width: 600px;
+  }
+}
+
+.WhatWeDo_whatWeDoCotentList {
+  margin: 0;
+  padding: 0;
+}
+
+.WhatWeDo_boxContent {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 28px 24px;
+}
+
+.WhatWeDo_boxContent ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 16px;
+}
+
+.WhatWeDo_boxContent ul li {
+  position: relative;
+  padding-left: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.WhatWeDo_boxContent ul li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+@media (min-width: 768px) {
+  .WhatWeDo_boxContent ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.spacer-height {
+  height: 120px;
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 32px 20px 40px;
+  }
+
+  .OurFormula_header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .OurFormula_logo {
+    width: 100%;
+    max-width: 180px;
+  }
+
+  .WhatWeDo_sectionHeading {
+    padding-left: 200px;
+    padding-top: 30px;
+  }
+
+  .WhatWeDo_whatWeDoWrapContainer:before {
+    left: 0;
+  }
+
+  .WhatWeDo_whatWeDoWrap {
+    gap: 18px;
+    padding-bottom: 42px;
+  }
+
+  .WhatWeDo_whatWeDoWrap h3 {
+    font-size: clamp(2.1rem, 7vw, 3rem);
+  }
+
+  .WhatWeDo_whatWeDoWrap h3:before {
+    left: 0;
+    top: -24px;
+    font-size: 0.8rem;
+  }
+
+  .WhatWeDo_boxContent ul {
+    grid-template-columns: 1fr;
+  }
+
+  .spacer-height {
+    height: 1px;
+  }
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.footer-logo img {
+  width: 120px;
+  height: auto;
+}

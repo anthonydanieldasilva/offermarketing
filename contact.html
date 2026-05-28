@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/contact.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactános - OFFER MARKETING</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;600&family=Space+Mono&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- PRELOADER (same markup to keep consistency) -->
+  <div id="preloader">
+    <div class="bracket tl"></div>
+    <div class="bracket tr"></div>
+    <div class="bracket bl"></div>
+    <div class="bracket br"></div>
+
+    <div class="pre-logo">
+      OFFER
+      <div class="pre-logo-fill" id="logoFill">OFFER</div>
+    </div>
+
+    <div class="loader-ring">
+      <svg viewBox="0 0 72 72">
+        <circle class="ring-track" cx="36" cy="36" r="32" />
+        <circle class="ring-arc a2" cx="36" cy="36" r="32" />
+        <circle class="ring-arc a1" cx="36" cy="36" r="32" />
+      </svg>
+      <div class="ring-center-dot"></div>
+    </div>
+
+    <div class="pre-count">Loading <span id="pct">0</span>%</div>
+  </div>
+
+  <div id="page">
+    <div class="hero-inner">
+      <div class="logo">
+        <img src="/Logotipo-OFFER-PNG-02.png" alt="Logo del proyecto">
+      </div>
+
+      <div class="contact-card">
+        <h2>Hablemos</h2>
+        <p>Contanos tu idea y nos pondremos en contacto.</p>
+        <div class="contact-shortcut">
+          <a class="btn whatsapp-link" href="https://wa.me/5491123456789" target="_blank" rel="noreferrer">
+            <img class="whatsapp-icon" src="/whatsapp (1).png" alt="WhatsApp">
+            Escribinos por WhatsApp
+          </a>
+          <a class="btn instagram-link" href="https://instagram.com/" target="_blank" rel="noreferrer">
+            Seguinos en Instagram
+            <img class="instagram-icon" src="/instagram.png" alt="Instagram">
+          </a>
+        </div>
+
+        <p>O envianos un e-mail</p>
+
+
+        <form action="#" method="post">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre">
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="tu@ejemplo.com">
+
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Alguna idea en mente ... ?"></textarea>
+
+          <div class="contact-actions">
+            <a class="btn btn-outline back-link" href="index.html">Volver</a>
+            <button class="btn btn-fill" type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
