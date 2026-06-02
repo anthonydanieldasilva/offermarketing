@@ -34,17 +34,31 @@ let currentIndex = 0;
 const imagePlane = document.getElementById('image-plane');
 const imageTitle = document.getElementById('image-title');
 
+function fadeImage() {
+    imagePlane.classList.remove('fade');
+    void imagePlane.offsetWidth;
+    imagePlane.classList.add('fade');
+}
+
 function loadImage(index) {
     const item = images[index];
-    const img = new Image();
-    img.onload = function() {
-        imagePlane.style.backgroundImage = `url('${item.src}')`;
+    const preloader = new Image();
+    const imageElement = document.getElementById('image-element');
+    preloader.onload = function() {
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            imagePlane.style.backgroundImage = `url('${item.src}')`;
+        } else {
+            imagePlane.style.backgroundImage = 'none';
+        }
+        imageElement.src = item.src;
+        imageElement.alt = item.name;
         imageTitle.textContent = item.name;
+        fadeImage();
     };
-    img.onerror = function() {
+    preloader.onerror = function() {
         console.error('Error al cargar la imagen:', item.src);
     };
-    img.src = item.src;
+    preloader.src = item.src;
 }
 
 function showNextImage() {
