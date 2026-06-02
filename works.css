@@ -263,6 +263,9 @@ body {
   outline: none;
   cursor: pointer;
   transition: 0.5s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .left {
   transform: rotate(45deg);
@@ -275,9 +278,12 @@ body {
   box-shadow: -3px 3px 0 rgba(255, 255, 255);
 }
 .left:active,
-.right:active,
+.right:active {
+  outline: none;
+  box-shadow: -3px 3px 0 rgba(0, 0, 0, 0.5) !important;
+}
 .left:focus,
 .right:focus {
-  outline: none;
-  box-shadow: -3px 3px 0 rgba(0, 0, 0, 0.5);
+  outline: none !important;
+  box-shadow: -3px 3px 0 rgba(0, 0, 0, 0.5) !important;
 }
