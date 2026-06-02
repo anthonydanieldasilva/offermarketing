@@ -274,3 +274,10 @@ body {
 .right:hover {
   box-shadow: -3px 3px 0 rgba(255, 255, 255);
 }
+.left:active,
+.right:active,
+.left:focus,
+.right:focus {
+  outline: none;
+  box-shadow: -3px 3px 0 rgba(0, 0, 0, 0.5);
+}
