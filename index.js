@@ -31,7 +31,60 @@ const timer = setInterval(() => {
         loader.classList.add("hide");
         document.body.classList.add("ready");
         page.classList.add("visible");
+        animateEmailElastic();
       }, 500);
     }, 200);
   }
 }, interval);
+
+// Elastic snap animation for email
+function animateEmailElastic() {
+  const emailEl = document.getElementById("emailElastic");
+  if (!emailEl) return;
+
+  const emailText = emailEl.querySelector(".email-text");
+  const text = "contacto@offermarketing.com.ar";
+  emailText.textContent = "";
+
+  text.split("").forEach((char, index) => {
+    const span = document.createElement("span");
+    span.className = "char";
+    span.textContent = char;
+    emailText.appendChild(span);
+
+    // Calculate delay: start at 0.3s and add 40ms per character
+    const delay = 0.3 + index * 0.04;
+    span.style.animationDelay = `${delay}s`;
+  });
+
+  // Animate copy icon with last char delay
+  const copyIcon = emailEl.querySelector(".copy-icon");
+  const lastCharDelay = 0.3 + (text.length) * 0.04;
+  copyIcon.style.animationDelay = `${lastCharDelay + 0.1}s`;
+
+  // Add click handler
+  emailEl.addEventListener("click", copyEmailToClipboard);
+  emailEl.addEventListener("keypress", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      copyEmailToClipboard();
+    }
+  });
+}
+
+// Copy email to clipboard
+function copyEmailToClipboard() {
+  const email = "contacto@offermarketing.com.ar";
+  const emailEl = document.getElementById("emailElastic");
+
+  navigator.clipboard.writeText(email).then(() => {
+    // Add copied state
+    emailEl.classList.add("copied");
+
+    // Remove copied state after 2 seconds
+    setTimeout(() => {
+      emailEl.classList.remove("copied");
+    }, 2000);
+  }).catch(err => {
+    console.error("Error al copiar:", err);
+  });
+}
