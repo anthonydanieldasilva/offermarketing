@@ -128,11 +128,24 @@ body {
     .image-box hgroup {
         max-width: 82%;
         padding: .5em .7em;
-        top: 82%;
+        top: 75%;
     }
 
     .image-box h2 {
         font-size: clamp(.65rem, 2.5vw, .85rem);
+    }
+}
+
+/* Pantallas muy estrechas: 360-390px */
+@media (max-width: 390px) {
+    .image-box hgroup {
+        top: 70%;
+        max-width: 85%;
+        padding: .4em .6em;
+    }
+
+    .footer-logo img {
+        width: 100px;
     }
 }
 

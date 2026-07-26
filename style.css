@@ -535,6 +535,11 @@ p.sub {
 
 /* Móviles pequeños (hasta 767px) */
 @media (max-width: 767px) {
+  p.sub {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+
   .cta-row {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
